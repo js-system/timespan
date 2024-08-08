@@ -19,7 +19,6 @@
     // TypeScript makes these safe & effective
     "no-case-declarations": "off",
     // Same approach used by TypeScript noUnusedLocals
-    "@typescript-eslint/no-unused-vars": ["warn", { "varsIgnorePattern": "^_", "argsIgnorePattern": "^_" }],
-    "semi": "warn"
+    "@typescript-eslint/no-unused-vars": ["warn", { "varsIgnorePattern": "^_", "argsIgnorePattern": "^_" }]
   }
 }

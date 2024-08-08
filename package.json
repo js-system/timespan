@@ -1,6 +1,6 @@
 {
   "name": "@js-system/timespan",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "repository": {
     "type": "git",
     "url": "https://github.com/js-system/timespan"
@@ -15,13 +15,14 @@
   ],
   "exports": {
     ".": {
+      "types": "./dist/types/index.d.ts",
+      "node": "./dist/cjs/index.js",
       "require": "./dist/cjs/index.js",
-      "import": "./dist/esm/index.js"
+      "default": "./dist/esm/index.js"
     }
   },
   "main": "dist/cjs/index.js",
   "module": "./dist/esm/index.js",
-  "es2015": "./dist/esm/index.js",
   "types": "./dist/types/index.d.ts",
   "scripts": {
     "format": "prettier --write . && format-imports src && format-imports tests",
@@ -38,7 +39,7 @@
     "build:umd": "tsc --project tsconfig.umd.json",
     "test": "jest",
     "clean": "rimraf dist && rimraf node_modules/.cache",
-    "prepublishOnly": "npm login --scope=@js-system && npm run build"
+    "prepublishOnly": "npm login --scope=@js-system"
   },
   "devDependencies": {
     "@homer0/prettier-plugin-jsdoc": "^8.0.0",
@@ -56,9 +57,9 @@
     "jest-watch-typeahead": "^2.2.2",
     "prettier": "^3.2.5",
     "rimraf": "^5.0.5",
-    "ts-jest": "^29.1.2",
+    "ts-jest": "^29.2.2",
     "ts-node": "^10.9.1",
-    "typescript": "^5.4.2",
+    "typescript": "^5.5.3",
     "typescript-eslint": "^7.1.1"
   },
   "prettier": "@prisma-labs/prettier-config",
@@ -66,6 +67,6 @@
     "emptyLinesBetweenGroups": false
   },
   "dependencies": {
-    "tslib": "^2.5.0"
+    "tslib": "^2.6.3"
   }
 }
