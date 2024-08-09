@@ -5,8 +5,6 @@ name: Node.js Package
 
 on:
   push:
-    branches:
-      - main
     tags:
       - 'v*.*.*'
 
@@ -32,8 +30,6 @@ jobs:
           registry-url: https://registry.npmjs.org/
       - run: npm ci
       - run: npm run build --if-present
-      - run: echo "//registry.npmjs.org/:_authToken=${{ secrets.NPM_TOKEN }}" > ~/.npmrc
-      - run: cat ~/.npmrc
       - run: npm publish --access public
         env:
           NODE_AUTH_TOKEN: ${{secrets.NPM_TOKEN}}
