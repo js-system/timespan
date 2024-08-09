@@ -30,9 +30,9 @@ jobs:
         with:
           node-version: 20
           registry-url: https://registry.npmjs.org/
-      - run: cat ~/.npmrc
       - run: npm ci
       - run: npm run build --if-present
+      - run: cat ~/.npmrc
       - run: npm publish --access public
         env:
           NPM_TOKEN: ${{secrets.NPM_TOKEN}}
