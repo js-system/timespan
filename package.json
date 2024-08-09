@@ -1,9 +1,16 @@
 {
   "name": "@js-system/timespan",
-  "version": "0.0.4",
+  "version": "0.0.5",
   "repository": "git+https://github.com/js-system/timespan.git",
   "author": "Lucas Dornelas",
   "license": "MIT",
+  "keywords": [
+    "js",
+    "system",
+    "time",
+    "span",
+    "timespan"
+  ],
   "files": [
     "dist",
     "dist/esm",

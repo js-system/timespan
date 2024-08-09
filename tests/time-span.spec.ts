@@ -224,4 +224,22 @@ describe('TimeSpan', () => {
     expectFromMilliseconds(time, 200);
     expectFromMilliseconds(time2, 100);
   });
+
+  test('Comparator', () => {
+    let time1 = TimeSpan.parse('01:00:00');
+    let time2 = TimeSpan.parse('02:00:00');
+
+    expect(time1.hours).toBe(1);
+    expect(time2.hours).toBe(2);
+    expect(time2 > time1).toBeTruthy();
+  });
+
+  test('Comparator', () => {
+    let time1 = TimeSpan.parse('01:00:00');
+    let time2 = TimeSpan.parse('02:00:00');
+
+    expect(time1.hours).toBe(1);
+    expect(time2.hours).toBe(2);
+    expect(time2 > time1).toBeTruthy();
+  });
 });
