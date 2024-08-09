@@ -38,8 +38,7 @@
     "build:esm": "tsc --project tsconfig.esm.json",
     "build:umd": "tsc --project tsconfig.umd.json",
     "test": "jest",
-    "clean": "rimraf dist && rimraf node_modules/.cache",
-    "prepublishOnly": "npm login --scope=@js-system"
+    "clean": "rimraf dist && rimraf node_modules/.cache"
   },
   "devDependencies": {
     "@homer0/prettier-plugin-jsdoc": "^8.0.0",
