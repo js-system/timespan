@@ -1,3 +1,5 @@
+import { TimeSpanLike } from './interfaces';
+
 export class TimeSpan {
   public static readonly MILLIS_PER_SECOND = 1000;
   public static readonly MILLIS_PER_MINUTE = TimeSpan.MILLIS_PER_SECOND * 60;
@@ -255,7 +257,7 @@ export class TimeSpan {
     return new TimeSpan(totalMilliSeconds);
   }
 
-  public static parse(span: string | number | TimeSpan | Date): TimeSpan {
+  public static parse(span: TimeSpanLike | Date): TimeSpan {
     if (span instanceof TimeSpan) {
       return span;
     }
@@ -270,6 +272,18 @@ export class TimeSpan {
 
     if (!span) {
       return null;
+    }
+
+    if (typeof span === 'object') {
+      const { days, hours, minutes, seconds, milliseconds } = span;
+
+      return TimeSpan.fromTime(
+        days || 0,
+        hours || 0,
+        minutes || 0,
+        seconds || 0,
+        milliseconds || 0,
+      );
     }
 
     const tokens = span.split(':');

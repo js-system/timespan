@@ -1,6 +1,6 @@
 {
   "name": "@js-system/timespan",
-  "version": "0.0.5",
+  "version": "0.0.6",
   "repository": "git+https://github.com/js-system/timespan.git",
   "author": "Lucas Dornelas",
   "license": "MIT",

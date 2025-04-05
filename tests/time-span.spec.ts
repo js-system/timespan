@@ -43,9 +43,10 @@ function expectFromMilliseconds(time: TimeSpan | null, milliseconds: number) {
   expect(time?.milliseconds === milliseconds).toBeTruthy();
 }
 
-const hoursToTest = [1, 2, 3];
-const minutesToTest = [1, 2, 3];
-const secondsToTest = [1, 2, 3];
+const valuesAux = [1, 2, 3];
+const hoursToTest = valuesAux;
+const minutesToTest = valuesAux;
+const secondsToTest = valuesAux;
 
 describe('TimeSpan', () => {
   test('Should create from text using Parse', () => {
@@ -73,6 +74,35 @@ describe('TimeSpan', () => {
 
     for (const seconds of secondsToTest) {
       expectFromSeconds(TimeSpan.parse(seconds * 1000), seconds);
+    }
+  });
+
+  test('Should create from TimeLike using Parse', () => {
+    for (const hours of hoursToTest) {
+      expectFromHours(
+        TimeSpan.parse({
+          hours,
+        }),
+        hours,
+      );
+    }
+
+    for (const minutes of minutesToTest) {
+      expectFromMinutes(
+        TimeSpan.parse({
+          minutes,
+        }),
+        minutes,
+      );
+    }
+
+    for (const seconds of secondsToTest) {
+      expectFromSeconds(
+        TimeSpan.parse({
+          seconds,
+        }),
+        seconds,
+      );
     }
   });
 
